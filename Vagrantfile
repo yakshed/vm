@@ -11,6 +11,6 @@ Vagrant.configure(2) do |config|
     ansible.playbook = "playbook.yml"
   end
 
-  config.vm.synced_folder '~/Documents', '/home/vagrant/Documents', type: 'nfs'
-  config.vm.synced_folder '~/.homesick/', '/home/vagrant/.homesick', type: 'rsync'
+  config.vm.synced_folder '~/Documents', '/home/bascht/Documents', type: 'nfs'
+  config.vm.synced_folder '~/.homesick/', '/home/bascht/.homesick', type: 'rsync'
 end

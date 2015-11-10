@@ -1,2 +1,4 @@
 .vagrant
 roles
+packer/packer_cache
+packer/output-*

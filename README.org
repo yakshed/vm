@@ -1,0 +1,5 @@
+* Libvirt backed local VM
+
+Inspired by [[https://github.com/moonglum][@moonglum]], ported to libvirt, build on Atlas.
+
+Bits taken from the [[https://github.com/hashicorp/atlas-packer-vagrant-tutorial/blob/master/template.json][packer docs]].

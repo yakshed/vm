@@ -11,6 +11,9 @@ apt_packages:
   - imagemagick
   - jq
   - libpq-dev
+  - mcabber
+  - openvpn
+  - pass
   - silversearcher-ag
   - tig
   - tmux

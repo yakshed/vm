@@ -7,8 +7,8 @@
     },
     "push": {
         "name": "{{user `atlas_username`}}/{{user `atlas_name`}}",
-        "vcs": false,
-        "base_dir": "../"
+        "vcs": true,
+        "include": "../"
     },
     "provisioners": [
         {

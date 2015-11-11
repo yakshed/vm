@@ -14,9 +14,9 @@
         {
             "type": "shell",
             "scripts": [
-                "scripts/base.sh",
-                "scripts/vagrant.sh",
-                "scripts/ansible.sh"
+                "packer/scripts/base.sh",
+                "packer/scripts/vagrant.sh",
+                "packer/scripts/ansible.sh"
             ],
             "override": {
                 "qemu": {
@@ -33,8 +33,8 @@
         {
             "type": "shell",
             "scripts": [
-                "scripts/cleanup.sh",
-                "scripts/zerodisk.sh"
+                "packer/scripts/cleanup.sh",
+                "packer/scripts/zerodisk.sh"
             ],
             "override": {
                 "qemu": {
@@ -55,7 +55,7 @@
             "format": "qcow2",
             "headless": false,
             "accelerator": "kvm",
-            "http_directory": "http",
+            "http_directory": "packer/http",
             "http_port_min": 10082,
             "http_port_max": 10089,
             "ssh_host_port_min": 2222,

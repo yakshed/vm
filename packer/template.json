@@ -26,9 +26,9 @@
         },
         {
             "type": "ansible-local",
-            "playbook_file": "../playbook.yml",
-            "playbook_dir": "../",
-            "group_vars": "../group_vars"
+            "playbook_file": "playbook.yml",
+            "playbook_dir": ".",
+            "group_vars": "group_vars"
         },
         {
             "type": "shell",

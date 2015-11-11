@@ -12,6 +12,11 @@
     },
     "provisioners": [
         {
+          "type": "file",
+          "source": "requirements.yml",
+          "destination": "/tmp/requirements.yml"
+        },
+        {
             "type": "shell",
             "scripts": [
                 "packer/scripts/base.sh",

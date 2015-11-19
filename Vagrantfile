@@ -1,6 +1,10 @@
 # -*- mode: ruby -*-
 Vagrant.configure(2) do |config|
-  config.vm.box = "s3than/trusty64"
+  config.vm.box = "bascht/vm"
+
+  config.ssh.username = "bascht"
+  config.ssh.password = "bascht"
+  config.ssh.insert_key = true
 
   config.vm.provider :libvirt do |libvirt|
     libvirt.memory = 4096

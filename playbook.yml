@@ -10,3 +10,4 @@
   - include: tasks/base.yml
   - include: tasks/ruby.yml
   - include: tasks/docker.yml
+  - include: tasks/hashitools.yml

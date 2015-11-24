@@ -3,7 +3,8 @@
         "atlas_username": "{{env `ATLAS_USERNAME`}}",
         "atlas_name": "{{env `ATLAS_NAME`}}",
         "username": "bascht",
-        "password": "bascht"
+        "password": "bascht",
+        "build_version": "0.1.{{env `ATLAS_BUILD_NUMBER`}}"
     },
     "push": {
         "name": "{{user `atlas_username`}}/{{user `atlas_name`}}",
@@ -95,7 +96,7 @@
              "artifact_type": "vagrant.box",
              "metadata": {
                  "provider": "libvirt",
-                 "version": "0.0.2"
+                 "version": "{{user `build_version`}}"
              }
          }
         ]

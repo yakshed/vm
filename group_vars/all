@@ -7,11 +7,15 @@ apt_packages:
   - fish
   - git
   - git-svn
+  - git-review
   - graphviz
   - htop
   - imagemagick
+  - ipython
+  - libev-dev
   - jq
   - libpq-dev
+  - mc
   - openvpn
   - pass
   - silversearcher-ag

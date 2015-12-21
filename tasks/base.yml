@@ -3,6 +3,9 @@
   apt_repository:
     repo: deb https://apt.dockerproject.org/repo ubuntu-trusty main
     state: present
+- name: Add MOAR repositories
+  apt_repository: repo={{ item }}
+  with_items: apt_ppas
 - name: Update cache and upgrade
   apt: update_cache=yes upgrade=safe
 - name: Install missing packages
@@ -25,4 +28,3 @@
   - confidential
   args:
     creates: /home/{{ ansible_ssh_user }}/.ssh/config
-  

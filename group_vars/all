@@ -2,6 +2,7 @@ apt_packages:
   - aspell-de
   - bitlbee
   - build-essential
+  - cargo-stable
   - cloc
   - emacs24
   - fish
@@ -18,10 +19,13 @@ apt_packages:
   - mc
   - openvpn
   - pass
+  - rust-stable
   - silversearcher-ag
   - tig
   - tmux
   - tree
+apt_ppas:
+  - ppa:hansjorg/rust
 docker_compose_version: '1.4.2'
 rvm1_install_flags: '--auto-dotfiles --user-install'
 rvm1_install_path: '/home/{{ ansible_ssh_user }}/.rvm'

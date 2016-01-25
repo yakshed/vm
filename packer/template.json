@@ -56,7 +56,7 @@
             "iso_checksum_type": "sha1",
             "ssh_wait_timeout": "30s",
             "shutdown_command": "sudo shutdown -P now",
-            "disk_size": 20000,
+            "disk_size": 17000,
             "format": "qcow2",
             "headless": false,
             "accelerator": "kvm",

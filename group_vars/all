@@ -4,6 +4,7 @@ apt_packages:
   - build-essential
   - cargo-stable
   - cloc
+  - cmake
   - emacs24
   - entr
   - fish
@@ -15,11 +16,15 @@ apt_packages:
   - imagemagick
   - ipython
   - libev-dev
+  - libgmp-dev
+  - libmagick++-dev
+  - libmaxminddb-dev
   - jq
   - libpq-dev
   - mc
   - openvpn
   - pass
+  - postgresql-client-9.3
   - rust-stable
   - silversearcher-ag
   - tig
@@ -27,6 +32,7 @@ apt_packages:
   - tree
 apt_ppas:
   - ppa:hansjorg/rust
+  - ppa:maxmind/ppa
 docker_compose_version: '1.4.2'
 rvm1_install_flags: '--auto-dotfiles --user-install'
 rvm1_install_path: '/home/{{ ansible_ssh_user }}/.rvm'

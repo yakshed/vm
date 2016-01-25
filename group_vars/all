@@ -33,10 +33,11 @@ apt_packages:
 apt_ppas:
   - ppa:hansjorg/rust
   - ppa:maxmind/ppa
+vm_user: 'bascht'
 docker_compose_version: '1.4.2'
 rvm1_install_flags: '--auto-dotfiles --user-install'
-rvm1_install_path: '/home/{{ ansible_ssh_user }}/.rvm'
-rvm1_user: '{{ ansible_ssh_user }}'
+rvm1_install_path: '/home/{{ vm_user }}/.rvm'
+rvm1_user: '{{ vm_user }}'
 rvm1_rubies:
   - 'ruby-1.9.3-p551'
   - 'ruby-2.2.1'

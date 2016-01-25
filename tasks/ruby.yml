@@ -2,6 +2,6 @@
 - name: Choose default Ruby
   command: rvm use 2.2.1
   become: yes
-  become_user: "{{ ansible_ssh_user }}"
+  become_user: "{{ vm_user }}"
   args:
-    creates: "/home/{{ ansible_ssh_user }}/.rvm/rubies/default"
+    creates: "/home/{{ vm_user }}/.rvm/rubies/default"

@@ -2,3 +2,5 @@
 - unarchive: src=/usr/local/src/packer.zip dest=/usr/local/bin copy=no creates=/usr/local/bin/packer
 - get_url: url=https://releases.hashicorp.com/terraform/0.6.9/terraform_0.6.9_linux_amd64.zip dest=/usr/local/src/terraform.zip sha256sum=c7d3e76de165be9f47eff8f54b41bb873f6f1881d2fb778a54bb8aaf69abfae6
 - unarchive: src=/usr/local/src/terraform.zip dest=/usr/local/bin copy=no creates=/usr/local/bin/terraform
+- get_url: url=https://releases.hashicorp.com/otto/0.2.0/otto_0.2.0_linux_amd64.zip dest=/usr/local/src/otto.zip sha256sum=4877972a8b8bafdb2acd9958c77f31a983b8fa292f5c3509f12a2361cd4307cd
+- unarchive: src=/usr/local/src/otto.zip dest=/usr/local/bin copy=no creates=/usr/local/bin/otto

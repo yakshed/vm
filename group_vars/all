@@ -5,6 +5,7 @@ apt_packages:
   - cargo-stable
   - cloc
   - emacs24
+  - entr
   - fish
   - git
   - git-svn

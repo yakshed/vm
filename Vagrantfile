@@ -9,6 +9,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider :libvirt do |libvirt|
     libvirt.memory = 4096
     libvirt.cpus = 4
+    libvirt.random_hostname = true
   end
 
   config.vm.provision "ansible" do |ansible|

@@ -1,11 +1,11 @@
 ---
 - hosts: all
-  sudo: True
+  become: yes
   roles:
     - rvm_io.rvm1-ruby
     - franklinkim.docker
 - hosts: all
-  sudo: True
+  become: yes
   tasks:
   - include: tasks/base.yml
   - include: tasks/ruby.yml

@@ -1,6 +1,6 @@
 ---
 - name: Choose default Ruby
-  command: rvm use 2.2.1
+  command: rvm use 2.2.4
   become: yes
   become_user: "{{ vm_user }}"
   args:

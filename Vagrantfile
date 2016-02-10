@@ -10,6 +10,8 @@ Vagrant.configure(2) do |config|
     libvirt.memory = 4096
     libvirt.cpus = 4
     libvirt.random_hostname = true
+    libvirt.cpu_mode = "host-model"
+    libvirt.nested = true
   end
 
   config.vm.provision "ansible" do |ansible|

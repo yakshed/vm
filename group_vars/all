@@ -16,12 +16,14 @@ apt_packages:
   - imagemagick
   - ipython
   - libev-dev
+  - libcurl4-openssl-dev
   - libgmp-dev
   - libmagick++-dev
   - libmaxminddb-dev
   - jq
   - libpq-dev
   - mc
+  - ncdu
   - openvpn
   - pass
   - postgresql-client-9.3

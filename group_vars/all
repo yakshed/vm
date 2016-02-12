@@ -24,6 +24,7 @@ apt_packages:
   - libpq-dev
   - mc
   - ncdu
+  - nodejs
   - openvpn
   - pass
   - postgresql-client-9.3

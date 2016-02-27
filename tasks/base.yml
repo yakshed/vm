@@ -22,6 +22,7 @@
     dest: /usr/local/bin/docker-compose mode=0755
 - name: Set default shell for {{ vm_user }} user
   user: name={{ vm_user }} shell=/usr/bin/fish groups=docker append=yes
+- gem: name=tmuxinator state=present user_install=no
 - gem: name=homesick state=present user_install=no
 - name: Symlink dotfiles
   command: homesick link {{ item }} --force

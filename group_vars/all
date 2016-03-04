@@ -38,7 +38,8 @@ apt_ppas:
   - ppa:hansjorg/rust
   - ppa:maxmind/ppa
 vm_user: 'bascht'
-docker_compose_version: '1.4.2'
+docker_compose_version: '1.6.2'
+docker_machine_version: '0.6.0'
 rvm1_install_flags: '--auto-dotfiles --user-install'
 rvm1_install_path: '/home/{{ vm_user }}/.rvm'
 rvm1_user: '{{ vm_user }}'

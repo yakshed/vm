@@ -14,7 +14,7 @@
     "provisioners": [
         {
           "type": "file",
-          "source": "requirements.yml",
+          "source": "ansible/requirements.yml",
           "destination": "/tmp/requirements.yml"
         },
         {
@@ -32,9 +32,9 @@
         },
         {
             "type": "ansible-local",
-            "playbook_file": "playbook.yml",
-            "playbook_dir": ".",
-            "group_vars": "group_vars"
+            "playbook_dir": "ansible",
+            "playbook_file": "ansible/playbook.yml",
+            "group_vars": "ansible/group_vars"
         },
         {
             "type": "shell",
@@ -51,14 +51,14 @@
     "builders": [
         {
             "type": "qemu",
-            "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.4-desktop-amd64.iso",
-            "iso_checksum": "72a37bd39f4605f8d554a27fff52af4cf6d8296f",
+            "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.4-server-amd64.iso",
+            "iso_checksum": "3ffb7a3690ce9a07ac4a4d1b829f990681f7e47d",
             "iso_checksum_type": "sha1",
             "ssh_wait_timeout": "30s",
             "shutdown_command": "sudo shutdown -P now",
             "disk_size": 12000,
             "format": "qcow2",
-            "headless": true,
+            "headless": false,
             "accelerator": "kvm",
             "http_directory": "packer/http",
             "http_port_min": 10082,

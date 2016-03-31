@@ -1,8 +1,7 @@
-up: roles
+up: ansible/roles
 	git pull -r
 	vagrant up --provider=libvirt --provision
 	vagrant ssh -- -A
 
-roles:
-	ansible-galaxy install -r requirements.yml  -p roles
-
+ansible/roles:
+	cd ansible; ansible-galaxy install -r requirements.yml  -p roles

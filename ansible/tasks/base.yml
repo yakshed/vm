@@ -20,10 +20,10 @@
   user: name={{ vm_user }} shell=/usr/bin/fish groups=docker append=yes
 - gem: name=tmuxinator state=present user_install=no
 - gem: name=homesick state=present user_install=no
-- name: Symlink dotfiles
-  command: homesick link {{ item }} --force
-  become: yes
-  become_user: "{{ vm_user }}"
-  with_items:
-  - public
-  - private
+#- name: Symlink dotfiles
+#  command: homesick link {{ item }} --force
+#  become: yes
+#  become_user: "{{ vm_user }}"
+#  with_items:
+#  - public
+#  - private

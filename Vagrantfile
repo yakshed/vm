@@ -1,6 +1,7 @@
 # -*- mode: ruby -*-
 Vagrant.configure(2) do |config|
   config.vm.box = "bascht/vm"
+  config.vm.box_version = ">= 0.1.45"
 
   config.ssh.username = "bascht"
   config.ssh.password = "bascht"
@@ -15,7 +16,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "playbook.yml"
+    ansible.playbook = "ansible/playbook.yml"
   end
 
   config.vm.synced_folder '~/Documents', '/home/bascht/Documents', type: 'nfs'

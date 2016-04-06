@@ -1,8 +1,13 @@
 - apt_key: keyserver=p80.pool.sks-keyservers.net id=58118E89F3A912897C070ADBF76221572C52609D
 - apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
+- apt_key: url=https://www.virtualbox.org/download/oracle_vbox.asc state=present
 - name: Add Docker Repository
   apt_repository:
     repo: deb https://apt.dockerproject.org/repo ubuntu-trusty main
+    state: present
+- name: Add VirtualBox Repository
+  apt_repository:
+    repo: deb http://download.virtualbox.org/virtualbox/debian trusty contrib
     state: present
 - name: Add NodeSource Repository
   apt_repository:

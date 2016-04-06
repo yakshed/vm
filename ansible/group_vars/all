@@ -34,6 +34,7 @@ apt_packages:
   - tig
   - tmux
   - tree
+  - virtualbox-5.0
 apt_ppas:
   - ppa:hansjorg/rust
   - ppa:maxmind/ppa

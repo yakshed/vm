@@ -8,10 +8,13 @@ apt_packages:
   - emacs24
   - entr
   - fish
+  - figlet
   - git
   - git-svn
   - git-review
   - graphviz
+  - guake
+  - hack-fonts
   - htop
   - imagemagick
   - ipython

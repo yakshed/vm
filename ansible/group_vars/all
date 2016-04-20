@@ -13,8 +13,6 @@ apt_packages:
   - git-svn
   - git-review
   - graphviz
-  - guake
-  - hack-fonts
   - htop
   - imagemagick
   - ipython

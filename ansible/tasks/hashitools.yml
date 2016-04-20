@@ -1,16 +1,16 @@
 - get_url:
-    url=https://releases.hashicorp.com/packer/0.8.6/packer_0.8.6_linux_amd64.zip
+    url=https://releases.hashicorp.com/packer/0.10.0/packer_0.10.0_linux_amd64.zip
     dest=/usr/local/src/packer.zip
-    sha256sum=2f1ca794e51de831ace30792ab0886aca516bf6b407f6027e816ba7ca79703b5
+    sha256sum=eadd33bc0f8fa42034059fc1cda5f43ed6f540746e767480f0706ebed49b45e5
 - unarchive:
     src=/usr/local/src/packer.zip
     dest=/usr/local/bin
     copy=no
     creates=/usr/local/bin/packer
 - get_url:
-    url=https://releases.hashicorp.com/terraform/0.6.9/terraform_0.6.9_linux_amd64.zip
+    url=https://releases.hashicorp.com/terraform/0.6.14/terraform_0.6.14_linux_amd64.zip
     dest=/usr/local/src/terraform.zip
-    sha256sum=c7d3e76de165be9f47eff8f54b41bb873f6f1881d2fb778a54bb8aaf69abfae6
+    sha256sum=6d93290f980df15a453e907ea9a2ca8f8fed41143c220953c911b5174c3e3ab0
 - unarchive:
     src=/usr/local/src/terraform.zip
     dest=/usr/local/bin

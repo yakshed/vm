@@ -34,7 +34,10 @@
             "type": "ansible-local",
             "playbook_dir": "ansible",
             "playbook_file": "ansible/playbook.yml",
-            "group_vars": "ansible/group_vars"
+            "group_vars": "ansible/group_vars",
+            "extra_arguments": [
+                "--user=root"
+            ]
         },
         {
             "type": "shell",

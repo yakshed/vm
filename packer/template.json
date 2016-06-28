@@ -31,7 +31,6 @@
             }
         },
         {
-            "command": "env -i HOME=/root PATH=/usr/sbin:/usr/bin:/sbin:/bin ansible-playbook",
             "type": "ansible-local",
             "playbook_dir": "ansible",
             "playbook_file": "ansible/playbook.yml",

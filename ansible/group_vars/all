@@ -40,7 +40,7 @@ apt_ppas:
   - ppa:maxmind/ppa
 vm_user: 'bascht'
 docker_compose_version: '1.7.1'
-docker_machine_version: '0.8.0'
+docker_machine_version: '0.8.0-rc1'
 rvm1_install_flags: '--auto-dotfiles --user-install'
 rvm1_install_path: '/home/{{ vm_user }}/.rvm'
 rvm1_user: '{{ vm_user }}'

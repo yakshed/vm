@@ -2,7 +2,7 @@ apt_packages:
   - aspell-de
   - bitlbee
   - build-essential
-  - cargo-stable
+  - cargo
   - cloc
   - cmake
   - emacs24
@@ -29,15 +29,14 @@ apt_packages:
   - nodejs
   - openvpn
   - pass
-  - postgresql-client-9.3
-  - rust-stable
+  - postgresql-client
+  - rustc
+  - rust-doc
   - silversearcher-ag
   - tig
   - tmux
   - tree
-  - virtualbox-5.0
 apt_ppas:
-  - ppa:hansjorg/rust
   - ppa:maxmind/ppa
 vm_user: 'bascht'
 docker_compose_version: '1.7.1'

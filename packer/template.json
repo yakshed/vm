@@ -4,7 +4,7 @@
         "atlas_name": "{{env `ATLAS_NAME`}}",
         "username": "bascht",
         "password": "bascht",
-        "build_version": "0.1.{{env `ATLAS_BUILD_NUMBER`}}"
+        "build_version": "0.2.{{env `ATLAS_BUILD_NUMBER`}}"
     },
     "push": {
         "name": "{{user `atlas_username`}}/{{user `atlas_name`}}",
@@ -36,7 +36,7 @@
             "playbook_file": "ansible/playbook.yml",
             "group_vars": "ansible/group_vars",
             "extra_arguments": [
-                "--user=root"
+                "--become-user=root"
             ]
         },
         {
@@ -54,8 +54,8 @@
     "builders": [
         {
             "type": "qemu",
-            "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.4-server-amd64.iso",
-            "iso_checksum": "3ffb7a3690ce9a07ac4a4d1b829f990681f7e47d",
+            "iso_url": "http://de.releases.ubuntu.com/16.04/ubuntu-16.04-server-amd64.iso",
+            "iso_checksum": "70db69379816b91eb01559212ae474a36ecec9ef",
             "iso_checksum_type": "sha1",
             "ssh_wait_timeout": "30s",
             "shutdown_command": "sudo shutdown -P now",
@@ -77,13 +77,27 @@
             "disk_interface": "virtio",
             "boot_wait": "5s",
             "boot_command": [
-                "<esc><esc><enter><wait>",
-                "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
-                "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+                "<esc><f6><esc>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs>",
+
+                "initrd=/install/initrd.gz ",
+                "auto=true ",
+                "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+                "language=en ",
+                "country=US ",
+                "locale=en_US.UTF-8 ",
                 "hostname={{ .Name }} ",
-                "fb=false debconf/frontend=noninteractive ",
-                "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA keyboard-configuration/variant=USA console-setup/ask_detect=false ",
-                "initrd=/install/initrd.gz -- <enter>"
+                "console-setup/ask_detect=false ",
+                "keyboard-configuration/layoutcode=de ",
+                "vga=788 noprompt quiet --<enter>"
             ]
         }
     ],

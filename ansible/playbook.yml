@@ -1,7 +1,6 @@
 ---
 - hosts: all
   roles:
-    - rvm_io.rvm1-ruby
     - role: angstwad.docker_ubuntu
       become: yes
       docker_group_members:
@@ -11,6 +10,5 @@
   become: yes
   tasks:
   - include: tasks/base.yml
-  - include: tasks/ruby.yml
   - include: tasks/docker.yml
   - include: tasks/hashitools.yml

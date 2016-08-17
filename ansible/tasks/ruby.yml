@@ -1,7 +1,0 @@
----
-- name: Choose default Ruby
-  command: rvm use 2.3.1
-  become: yes
-  become_user: "{{ vm_user }}"
-  args:
-    creates: "/home/{{ vm_user }}/.rvm/rubies/default"

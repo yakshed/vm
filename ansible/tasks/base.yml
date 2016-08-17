@@ -1,12 +1,7 @@
 - apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
-- apt_key: url=https://www.virtualbox.org/download/oracle_vbox.asc state=present
 - name: Add Docker Repository
   apt_repository:
     repo: deb https://apt.dockerproject.org/repo ubuntu-xenial main
-    state: present
-- name: Add VirtualBox Repository
-  apt_repository:
-    repo: deb http://download.virtualbox.org/virtualbox/debian xenial contrib
     state: present
 - name: Add NodeSource Repository
   apt_repository:

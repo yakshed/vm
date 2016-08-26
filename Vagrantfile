@@ -8,7 +8,7 @@ Vagrant.configure(2) do |config|
   config.ssh.insert_key = true
 
   config.vm.provider :libvirt do |libvirt|
-    libvirt.memory = 4096
+    libvirt.memory = 2048
     libvirt.cpus = 4
     libvirt.random_hostname = true
     libvirt.cpu_mode = "host-model"

@@ -4,7 +4,7 @@
         "atlas_name": "{{env `ATLAS_NAME`}}",
         "username": "bascht",
         "password": "bascht",
-        "build_version": "0.2.{{env `ATLAS_BUILD_NUMBER`}}"
+        "build_version": "{{env `ATLAS_BUILD_GITHUB_TAG`}}"
     },
     "push": {
         "name": "{{user `atlas_username`}}/{{user `atlas_name`}}",

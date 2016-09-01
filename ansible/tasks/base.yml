@@ -17,6 +17,8 @@
   user: name={{ vm_user }} shell=/usr/bin/fish groups=docker append=yes
 - gem: name=tmuxinator state=present user_install=no
 - gem: name=homesick state=present user_install=no
+- mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
+
 #- name: Symlink dotfiles
 #  command: homesick link {{ item }} --force
 #  become: yes

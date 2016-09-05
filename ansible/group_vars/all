@@ -26,6 +26,7 @@ apt_packages:
   - libxml2-utils
   - mc
   - ncdu
+  - nfs-kernel-server 
   - nodejs
   - openvpn
   - pass

@@ -17,7 +17,9 @@
   user: name={{ vm_user }} shell=/usr/bin/fish groups=docker append=yes
 - gem: name=tmuxinator state=present user_install=no
 - gem: name=homesick state=present user_install=no
-- mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
+- name: Mount Code Volume
+  mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
+  when: lookup('env','ATLAS_BUILD_NAME') == ""
 - lineinfile: dest=/etc/exports line="/home/bascht/Code 192.168.0.0/16(rw,sync)"
 
 #- name: Symlink dotfiles

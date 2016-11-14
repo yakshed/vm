@@ -43,5 +43,5 @@ apt_ppas:
   - ppa:maxmind/ppa
   - ppa:brightbox/ruby-ng
 vm_user: 'bascht'
-docker_compose_version: '1.8.0'
-docker_machine_version: '0.8.0'
+docker_compose_version: '1.8.1'
+docker_machine_version: '0.8.2'

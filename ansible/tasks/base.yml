@@ -18,7 +18,11 @@
 - gem: name=tmuxinator state=present user_install=no
 - gem: name=homesick state=present user_install=no
 - git: repo=https://github.com/bbatsov/prelude.git dest=/home/bascht/.local/prelude
-- mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
+- stat: path=/dev/vdb
+  register: code_mount_exists
+- name: Mount Code Volume
+  mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
+  when: code_mount_exists == True
 - lineinfile: dest=/etc/exports line="/home/bascht/Code 192.168.0.0/16(rw,sync)"
 
 #- name: Symlink dotfiles

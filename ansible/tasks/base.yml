@@ -21,7 +21,7 @@
   register: code_disk
 - name: Mount Code Volume
   mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
-  when: code_disk.stat.isblk
+  when: code_disk.stat.isblk is defined and code_disk.stat.isblk
 - lineinfile: dest=/etc/exports line="/home/bascht/Code 192.168.0.0/16(rw,sync)"
 - name: "Clone Dotfiles"
   git: repo=https://github.com/bascht/dotfiles-public.git dest=/home/bascht/.homesick/repos/public

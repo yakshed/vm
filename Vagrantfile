@@ -25,5 +25,5 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.synced_folder '~/Documents', '/home/bascht/Documents', type: 'sshfs'
-  config.vm.synced_folder '~/.homesick/', '/home/bascht/.homesick', type: 'rsync'
+  config.vm.synced_folder '~/.homesick/repos/private', '/home/bascht/.homesick/repos/private', type: 'rsync'
 end

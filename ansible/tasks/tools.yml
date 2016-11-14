@@ -8,14 +8,6 @@
   git: repo=https://github.com/bbatsov/prelude.git dest=/home/bascht/.emacs.d
   become_user: "{{ vm_user }}"
   when: emacs_conf.stat.isdir is not defined
-- name: "Symlink dotfiles"
-  command: homesick link {{ item }} --force
-  when: tmux_conf.stat.islnk is not defined
-  become: yes
-  become_user: "{{ vm_user }}"
-  with_items:
-  - public
-  - private
 - name: "Download OMF"
   git: repo=https://github.com/oh-my-fish/oh-my-fish.git dest=/home/bascht/.local/omf
   become_user: "{{ vm_user }}"

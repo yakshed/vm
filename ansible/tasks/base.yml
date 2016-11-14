@@ -23,3 +23,10 @@
   mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
   when: code_mount_exists == True
 - lineinfile: dest=/etc/exports line="/home/bascht/Code 192.168.0.0/16(rw,sync)"
+- name: "Clone Dotfiles"
+  git: repo=https://github.com/bascht/dotfiles-public.git dest=/home/bascht/.homesick/repos/public
+  become_user: "{{ vm_user }}"
+- name: "Symlink dotfiles"
+  command: homesick link public --force
+  become: yes
+  become_user: "{{ vm_user }}"

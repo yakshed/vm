@@ -17,6 +17,7 @@
   user: name={{ vm_user }} shell=/usr/bin/fish groups=docker append=yes
 - gem: name=tmuxinator state=present user_install=no
 - gem: name=homesick state=present user_install=no
+- git: repo=https://github.com/bbatsov/prelude.git dest=/home/bascht/.local/prelude
 - mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
 - lineinfile: dest=/etc/exports line="/home/bascht/Code 192.168.0.0/16(rw,sync)"
 

@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 Vagrant.configure(2) do |config|
   config.vm.box = "bascht/vm"
-  config.vm.box_version = ">= 0.3.2"
+  config.vm.box_version = ">= 0.4.0"
 
   config.ssh.username = "bascht"
   config.ssh.password = "bascht"

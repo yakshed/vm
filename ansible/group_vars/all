@@ -1,5 +1,6 @@
 apt_packages:
   - aspell-de
+  - atom
   - bitlbee
   - build-essential
   - cargo
@@ -14,6 +15,7 @@ apt_packages:
   - git-review
   - graphviz
   - htop
+  - human-theme
   - imagemagick
   - ipython
   - libev-dev
@@ -39,9 +41,11 @@ apt_packages:
   - tig
   - tmux
   - tree
+  - ttf-ubuntu-font-family
 apt_ppas:
   - ppa:maxmind/ppa
   - ppa:brightbox/ruby-ng
+  - ppa:webupd8team/atom
 vm_user: 'bascht'
 docker_compose_version: '1.8.1'
 docker_machine_version: '0.8.2'

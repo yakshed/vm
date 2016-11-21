@@ -19,12 +19,17 @@
 - gem: name=homesick state=present user_install=no
 - stat: path=/dev/vdb
   register: code_disk
+- stat: path=/home/bascht/.emacs.d/init.el
+  register: emacs_conf
 - name: Mount Code Volume
   mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
   when: code_disk.stat.isblk is defined and code_disk.stat.isblk
 - lineinfile: dest=/etc/exports line="/home/bascht/Code 192.168.0.0/16(rw,sync)"
+- name: "Clone Prelude"
+  git: repo=https://github.com/bbatsov/prelude.git dest=/home/bascht/.emacs.d update=no
+  become_user: "{{ vm_user }}"
 - name: "Clone Dotfiles"
-  git: repo=https://github.com/bascht/dotfiles-public.git dest=/home/bascht/.homesick/repos/public
+  git: repo=https://github.com/bascht/dotfiles-public.git dest=/home/bascht/.homesick/repos/public update=no
   become_user: "{{ vm_user }}"
 - name: "Symlink dotfiles"
   command: homesick link public --force

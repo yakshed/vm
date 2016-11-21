@@ -1,13 +1,7 @@
-- stat: path=/home/bascht/.emacs.d
-  register: emacs_conf
 - stat: path=/home/bascht/.tmux.conf
   register: tmux_conf
 - stat: path=/home/bascht/.local/share/omf
   register: omf
-- name: "Clone Prelude"
-  git: repo=https://github.com/bbatsov/prelude.git dest=/home/bascht/.emacs.d
-  become_user: "{{ vm_user }}"
-  when: emacs_conf.stat.isdir is not defined
 - name: "Download OMF"
   git: repo=https://github.com/oh-my-fish/oh-my-fish.git dest=/home/bascht/.local/omf
   become_user: "{{ vm_user }}"

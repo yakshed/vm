@@ -6,7 +6,7 @@ apt_packages:
   - cargo
   - cloc
   - cmake
-  - emacs24
+  - emacs25
   - entr
   - fish
   - figlet
@@ -49,6 +49,7 @@ apt_ppas:
   - ppa:maxmind/ppa
   - ppa:brightbox/ruby-ng
   - ppa:webupd8team/atom
+  - ppa:adrozdoff/emacs
 vm_user: 'bascht'
 docker_compose_version: '1.8.1'
 docker_machine_version: '0.8.2'

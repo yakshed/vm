@@ -1,5 +1,6 @@
 .vagrant
 .vagrant-*
+ansible/*.retry
 roles
 packer_cache
 output-*

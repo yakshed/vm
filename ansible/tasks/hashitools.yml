@@ -1,23 +1,23 @@
 - get_url:
-    url=https://releases.hashicorp.com/packer/0.11.0/packer_0.11.0_linux_amd64.zip
+    url=https://releases.hashicorp.com/packer/0.12.2/packer_0.12.2_linux_amd64.zip
     dest=/usr/local/src/packer.zip
-    sha256sum=318ffffa13763eb6f29f28f572656356dc3dbf8d54c01ffddd1c5e2f08593adb
+    sha256sum=035d0ea1fe785ab6b673bc2a79399125d4014f29151e106635fa818bb726bebf
 - unarchive:
     src=/usr/local/src/packer.zip
     dest=/usr/local/bin
     copy=no
     creates=/usr/local/bin/packer
 - get_url:
-    url=https://releases.hashicorp.com/terraform/0.7.10/terraform_0.7.10_linux_amd64.zip
+    url=https://releases.hashicorp.com/terraform/0.8.7/terraform_0.8.7_linux_amd64.zip
     dest=/usr/local/src/terraform.zip
-    sha256sum=a6da76d6228349855f7c503b769fb231e6b1009add5e5b2586ecb7624e9ecf15
+    sha256sum=7ca424d8d0e06697cc7f492b162223aef525bfbcd69248134a0ce0b529285c8c
 - unarchive:
     src=/usr/local/src/terraform.zip
     dest=/usr/local/bin
     copy=no
     creates=/usr/local/bin/terraform
 - get_url:
-    url=https://releases.hashicorp.com/vagrant/1.8.7/vagrant_1.8.7_x86_64.deb
+    url=https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.deb
     dest=/usr/local/src/vagrant.deb
 - apt:
     deb=/usr/local/src/vagrant.deb

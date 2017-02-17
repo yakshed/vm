@@ -25,8 +25,25 @@
   mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
   when: code_disk.stat.isblk is defined and code_disk.stat.isblk
 - lineinfile: dest=/etc/exports line="/home/bascht/Code 192.168.0.0/16(rw,sync)"
+- file:
+    path: "/home/{{vm_user}}/.local/share/fonts/"
+    state: directory
+    mode: 0755
+    owner: "{{ vm_user }}"
+    group: "{{ vm_user }}"
+- get_url:
+    url=https://github.com/madmalik/mononoki/releases/download/1.2/mononoki.zip
+    dest=/usr/local/src/mononoki.zip
+    sha256sum=cf29ea7663dbfe94feaedaf5c0be4f4ae6a5b98c1293e0e772e69c28ac5dc658
+- unarchive:
+    src=/usr/local/src/mononoki.zip
+    dest="/home/{{vm_user}}/.local/share/fonts/"
+    copy=no
+    creates="/home/{{vm_user}}/.local/share/fonts/mononoki-Regular.ttf"
+    owner="{{ vm_user }}"
+    group="{{ vm_user }}"
 - name: "Clone Prelude"
-  git: repo=https://github.com/bbatsov/prelude.git dest=/home/bascht/.emacs.d update=no
+  git: repo=https://github.com/bbatsov/prelude.git dest=/home/bascht/.emacs.d update=no clone=yes
   become_user: "{{ vm_user }}"
 - name: "Clone Dotfiles"
   git: repo=https://github.com/bascht/dotfiles-public.git dest=/home/bascht/.homesick/repos/public update=no

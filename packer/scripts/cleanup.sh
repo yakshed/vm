@@ -32,9 +32,9 @@ echo "cleaning up dhcp leases"
 rm /var/lib/dhcp/*
 
 # Clean up Apts Rubbish bin
-apt-get -y autoremove --purge
-apt-get -y clean
-apt-get -y autoclean
+apt -y autoremove --purge
+apt -y clean
+apt -y autoclean
 
 # Clean up logs + journals
 find /var/log -maxdepth 1 -type f -exec cp /dev/null {} \;

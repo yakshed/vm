@@ -1,0 +1,12 @@
+{
+    "name": "bascht/vm",
+    "description": "My local dev environment",
+    "short_description": "Don't use it. Unless you are shure what you do. Even then: Don't use it.",
+    "versions": [{
+        "version": "0.7.1",
+        "providers": [{
+            "name": "libvirt",
+            "url": "../packer_qemu_libvirt.box"
+        }]
+    }]
+}

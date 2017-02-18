@@ -1,15 +1,10 @@
 {
     "variables": {
-        "atlas_username": "{{env `ATLAS_USERNAME`}}",
-        "atlas_name": "{{env `ATLAS_NAME`}}",
         "username": "bascht",
         "password": "bascht",
-        "build_version": "0.5.0.{{env `ATLAS_BUILD_ID`}}"
-    },
-    "push": {
-        "name": "{{user `atlas_username`}}/{{user `atlas_name`}}",
-        "vcs": true,
-        "base_dir": "packer"
+        "build_version": "0.7.1",
+        "ubuntu_iso": "http://de.releases.ubuntu.com/16.04/ubuntu-16.04.2-server-amd64.iso",
+        "ubuntu_checksum": "f529548fa7468f2d8413b8427d8e383b830df5f6"
     },
     "provisioners": [
         {
@@ -54,14 +49,14 @@
     "builders": [
         {
             "type": "qemu",
-            "iso_url": "http://de.releases.ubuntu.com/16.04.1/ubuntu-16.04.1-server-amd64.iso",
-            "iso_checksum": "de5ee8665048f009577763efbf4a6f0558833e59",
+            "iso_url": "{{ user `ubuntu_iso`}}",
+            "iso_checksum": "{{user `ubuntu_checksum`}}",
             "iso_checksum_type": "sha1",
             "ssh_wait_timeout": "30s",
             "shutdown_command": "sudo shutdown -P now",
             "disk_size": 20000,
             "format": "qcow2",
-            "headless": false,
+            "headless": true,
             "accelerator": "kvm",
             "http_directory": "packer/http",
             "http_port_min": 10082,
@@ -98,23 +93,18 @@
                 "console-setup/ask_detect=false ",
                 "keyboard-configuration/layoutcode=de ",
                 "vga=788 noprompt quiet --<enter>"
+            ],
+            "qemuargs": [
+                [ "-m", "2048M" ]
             ]
         }
     ],
     "post-processors": [
         [{
             "type": "vagrant",
-            "keep_input_artifact": false
-        },
-         {
-             "type": "atlas",
-             "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
-             "artifact_type": "vagrant.box",
-             "metadata": {
-                 "provider": "libvirt",
-                 "version": "{{user `build_version`}}"
-             }
-         }
+            "keep_input_artifact": true,
+            "compression_level": 9
+        }
         ]
     ]
 }

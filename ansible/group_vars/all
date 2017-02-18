@@ -1,4 +1,5 @@
 apt_packages:
+  - adwaita-icon-theme
   - aspell-de
   - atom
   - bitlbee

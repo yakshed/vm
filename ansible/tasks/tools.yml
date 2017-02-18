@@ -10,3 +10,9 @@
   when: omf.stat.isdir is not defined
   become: yes
   become_user: "{{ vm_user }}"
+- name: "Provide IP for Tmux + Shell to pick up"
+  ignore_errors: yes
+  copy:
+    dest: /var/run/vm_ip
+    mode: "0744"
+    content: "{{ ansible_eth0.ipv4.address|default(omit) }}"

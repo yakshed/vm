@@ -50,3 +50,5 @@
   command: homesick link public --force
   become: yes
   become_user: "{{ vm_user }}"
+- hostname:
+    name: "{{ vm_hostname }}"

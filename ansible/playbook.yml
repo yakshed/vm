@@ -11,5 +11,4 @@
   tasks:
   - include: tasks/base.yml
   - include: tasks/tools.yml
-  - include: tasks/docker.yml
   - include: tasks/hashitools.yml

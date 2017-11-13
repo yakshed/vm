@@ -14,6 +14,7 @@ apt_packages:
   - entr
   - fish
   - figlet
+  - fonts-hack-otf
   - git
   - git-svn
   - git-review
@@ -36,6 +37,7 @@ apt_packages:
   - nfs-kernel-server 
   - nodejs
   - openvpn
+  - pandoc
   - pass
   - postgresql-client
   - redir

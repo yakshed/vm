@@ -24,7 +24,9 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "ansible/playbook.yml"
-    ansible.extra_vars = { vm_hostname: VM_NAME }
+    ansible.extra_vars = {
+      ansible_shell_executable: '/bin/bash',
+      vm_hostname: VM_NAME }
   end
 
   config.vm.synced_folder '~/Documents', '/home/bascht/Documents', type: 'sshfs'

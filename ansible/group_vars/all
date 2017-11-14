@@ -41,8 +41,8 @@ apt_packages:
   - pass
   - postgresql-client
   - redir
-  - ruby2.3
-  - ruby2.3-dev
+  - ruby2.4
+  - ruby2.4-dev
   - ruby-switch
   - rustc
   - rust-doc

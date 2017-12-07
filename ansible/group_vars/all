@@ -12,6 +12,7 @@ apt_packages:
   - cmake
   - emacs25
   - entr
+  - firefox
   - fish
   - figlet
   - fonts-hack-otf
@@ -51,6 +52,7 @@ apt_packages:
   - tmux
   - tree
   - ttf-ubuntu-font-family
+  - zsh
 apt_ppas:
   - ppa:maxmind/ppa
   - ppa:brightbox/ruby-ng

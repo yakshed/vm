@@ -36,7 +36,6 @@ apt_packages:
   - mc
   - ncdu
   - nfs-kernel-server 
-  - nodejs
   - openvpn
   - pandoc
   - pass
@@ -45,8 +44,6 @@ apt_packages:
   - ruby2.4
   - ruby2.4-dev
   - ruby-switch
-  - rustc
-  - rust-doc
   - silversearcher-ag
   - tig
   - tmux

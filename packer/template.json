@@ -2,9 +2,9 @@
     "variables": {
         "username": "bascht",
         "password": "bascht",
-        "build_version": "0.7.1",
-        "ubuntu_iso": "http://de.releases.ubuntu.com/16.04/ubuntu-16.04.2-server-amd64.iso",
-        "ubuntu_checksum": "f529548fa7468f2d8413b8427d8e383b830df5f6"
+        "build_version": "0.9.1",
+        "ubuntu_iso": "http://de.releases.ubuntu.com/16.04/ubuntu-16.04.3-server-amd64.iso",
+        "ubuntu_checksum": "f3532991e031cae75bcf5e695afb844dd278fff9"
     },
     "provisioners": [
         {

@@ -1,14 +1,7 @@
 - stat: path=/home/bascht/.tmux.conf
   register: tmux_conf
-- stat: path=/home/bascht/.local/share/omf
-  register: omf
 - name: "Download OMF"
-  git: repo=https://github.com/oh-my-fish/oh-my-fish.git dest=/home/bascht/.local/omf
-  become_user: "{{ vm_user }}"
-- name: "Install OMF"
-  command: /home/bascht/.local/omf/bin/install --offline --yes --noninteractive
-  when: omf.stat.isdir is not defined
-  become: yes
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/bascht/.oh-my-zsh
   become_user: "{{ vm_user }}"
 - name: "Provide IP for Tmux + Shell to pick up"
   ignore_errors: yes

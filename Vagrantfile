@@ -3,7 +3,7 @@ VM_NAME=File.basename(File.dirname(__FILE__))
 
 Vagrant.configure(2) do |config|
   config.vm.box = "bascht/vm"
-  config.vm.box_version = ">= 0.9.1"
+  config.vm.box_version = ">= 0.9.3"
   config.vm.hostname = "DevVm"
   config.ssh.username = "bascht"
   config.ssh.password = "bascht"

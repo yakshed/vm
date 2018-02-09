@@ -14,6 +14,20 @@
 - gem: name=homesick state=present user_install=no
 - stat: path=/dev/vdb
   register: code_disk
+- name: Fix up SSH for proper Socket Forwarding
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    line: 'StreamLocalBindUnlink yes'
+- name: Symlink Extra Agent Socket
+  file:
+    src: "/home/{{vm_user}}/.gnupg/S.gpg-agent"
+    dest: "/home/{{vm_user}}/.gnupg/S.gpg-agent.extra"
+    state: link
+- name: Symlink SSH Agent Socket
+  file:
+    src: "/home/{{vm_user}}/.gnupg/S.gpg-agent"
+    dest: "/home/{{vm_user}}/.gnupg/S.gpg-agent.ssh"
+    state: link
 - name: Mount Code Volume
   mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
   when: code_disk.stat.isblk is defined and code_disk.stat.isblk

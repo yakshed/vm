@@ -45,6 +45,8 @@ apt_packages:
   - redir
   - ruby2.4
   - ruby2.4-dev
+  - ruby2.5
+  - ruby2.5-dev
   - ruby-switch
   - silversearcher-ag
   - tig

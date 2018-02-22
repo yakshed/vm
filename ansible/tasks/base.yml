@@ -49,9 +49,6 @@
     creates="/home/{{vm_user}}/.local/share/fonts/mononoki-Regular.ttf"
     owner="{{ vm_user }}"
     group="{{ vm_user }}"
-- name: "Clone Prelude"
-  git: repo=https://github.com/syl20bnr/spacemacs.git dest=/home/bascht/.emacs.d update=no clone=yes
-  become_user: "{{ vm_user }}"
 - name: "Clone Dotfiles"
   git: repo=https://github.com/bascht/dotfiles-public.git dest=/home/bascht/.homesick/repos/public update=no
   become_user: "{{ vm_user }}"

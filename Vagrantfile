@@ -32,6 +32,6 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder '~/Documents', '/home/bascht/Documents', type: 'sshfs'
   config.vm.synced_folder './', '/vagrant', type: 'sshfs'
-  config.vm.synced_folder '~/.homesick/repos/private', '/home/bascht/.homesick/repos/private', type: 'rsync'
+  config.vm.synced_folder '~/.homesick/repos/', '/home/bascht/.homesick/repos/', type: 'rsync'
   config.vm.synced_folder '~/.local/share/fonts', '/home/bascht/.local/share/fonts', type: 'rsync'
 end

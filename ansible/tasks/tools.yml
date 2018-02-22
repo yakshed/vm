@@ -9,3 +9,7 @@
     dest: /var/run/vm_ip
     mode: "0744"
     content: "{{ ansible_eth0.ipv4.address|default(omit) }}"
+- name: Install Tern globally
+  npm:
+    name: tern
+    global: yes

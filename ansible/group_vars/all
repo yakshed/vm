@@ -36,6 +36,7 @@ apt_packages:
   - libxml2-utils
   - mc
   - ncdu
+  - nodejs
   - nfs-kernel-server 
   - openvpn
   - pandoc

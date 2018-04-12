@@ -1,8 +1,5 @@
 - stat: path=/home/bascht/.tmux.conf
   register: tmux_conf
-- name: "Download OMF"
-  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/bascht/.oh-my-zsh
-  become_user: "{{ vm_user }}"
 - name: "Provide IP for Tmux + Shell to pick up"
   ignore_errors: yes
   copy:

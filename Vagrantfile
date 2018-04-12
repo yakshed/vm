@@ -1,10 +1,11 @@
+
 # -*- mode: ruby -*-
 VM_NAME=File.basename(File.dirname(__FILE__))
 AVAILABLE_MEMORY=`free -m`.lines[1].split(" ")[1].to_i / 1024
 
 Vagrant.configure(2) do |config|
   config.vm.box = "bascht/vm"
-  config.vm.box_version = ">= 0.9.3"
+  config.vm.box_version = ">= 0.11.0"
   config.vm.hostname = "DevVm"
   config.ssh.username = "bascht"
   config.ssh.password = "bascht"

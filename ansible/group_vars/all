@@ -11,7 +11,7 @@ apt_packages:
   - cloc
   - cmake
   - direnv
-  - emacs25
+  - emacs26
   - entr
   - firefox
   - fish
@@ -58,7 +58,7 @@ apt_ppas:
   - ppa:maxmind/ppa
   - ppa:brightbox/ruby-ng
   - ppa:webupd8team/atom
-  - ppa:adrozdoff/emacs
+  - ppa:kelleyk/emacs
 vm_user: 'bascht'
 vm_hostname: "BaseVm"
 docker_pkg_name: 'docker-ce'

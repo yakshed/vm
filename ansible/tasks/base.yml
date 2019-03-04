@@ -46,11 +46,5 @@
   mount: name=/var/lib/docker src='/dev/vdb' fstype=ext4 state=mounted
   when: docker_disk.stat.isblk is defined and docker_disk.stat.isblk
 - lineinfile: dest=/etc/exports line="/home/bascht/Code 192.168.0.0/16(rw,sync)"
-- file:
-    path: "/home/{{vm_user}}/.local/share/fonts/"
-    state: directory
-    mode: 0755
-    owner: "{{ vm_user }}"
-    group: "{{ vm_user }}"
 - hostname:
     name: "{{ vm_hostname }}"

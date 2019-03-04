@@ -10,3 +10,18 @@
   npm:
     name: tern
     global: yes
+- stat: path=/home/bascht/bin/install-binreleases
+  register: binutils
+
+- name: "Symlink dotfiles"
+  command: homesick symlink public --force
+  become: yes
+  become_user: "{{ vm_user }}"
+  args:
+    creates: "/home/bascht/bin/install-binreleases"
+- name: "Symlink dotfiles"
+  command: homesick symlink public --force
+  become: yes
+  become_user: "{{ vm_user }}"
+  args:
+    creates: "/home/bascht/bin/packer"

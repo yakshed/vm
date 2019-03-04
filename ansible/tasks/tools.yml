@@ -20,7 +20,7 @@
   args:
     creates: "/home/bascht/bin/install-binreleases"
 - name: "Install binutils"
-  command: install-binreleases
+  command: /home/bascht/bin/install-binreleases
   become: yes
   become_user: "{{ vm_user }}"
   args:

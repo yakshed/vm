@@ -1,3 +1,6 @@
+- gem: name=tmuxinator state=present user_install=no
+- gem: name=homesick state=present user_install=no
+- gem: name=pry state=present user_install=no
 - stat: path=/home/bascht/.tmux.conf
   register: tmux_conf
 - name: "Provide IP for Tmux + Shell to pick up"

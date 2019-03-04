@@ -18,9 +18,6 @@
     groups: docker
     append: true
     create_home: true
-
-- gem: name=tmuxinator state=present user_install=no
-- gem: name=homesick state=present user_install=no
 - stat: path=/dev/vda
   register: code_disk
 - stat: path=/dev/vdb

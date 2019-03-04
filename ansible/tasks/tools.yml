@@ -19,8 +19,8 @@
   become_user: "{{ vm_user }}"
   args:
     creates: "/home/bascht/bin/install-binreleases"
-- name: "Symlink dotfiles"
-  command: homesick symlink public --force
+- name: "Install binutils"
+  command: install-binreleases
   become: yes
   become_user: "{{ vm_user }}"
   args:

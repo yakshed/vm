@@ -14,6 +14,7 @@ Vagrant.configure(2) do |config|
     libvirt.random_hostname = true
     libvirt.cpu_mode = "host-model"
     libvirt.nested = true
+    libvirt.management_network_address = "10.40.0.0/24"
     libvirt.storage :file,
                     :path => "#{VM_NAME}Home",
                     :serial => "code",

@@ -4,7 +4,6 @@ apt_packages:
   - aspell-en
   - aspell-fr
   - aspell-it
-  - atom
   - bitlbee
   - build-essential
   - cargo
@@ -57,7 +56,6 @@ apt_packages:
 apt_ppas:
   - ppa:maxmind/ppa
   - ppa:brightbox/ruby-ng
-  - ppa:webupd8team/atom
   - ppa:kelleyk/emacs
 vm_user: 'bascht'
 vm_hostname: "BaseVm"

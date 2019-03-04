@@ -61,5 +61,5 @@ vm_user: 'bascht'
 vm_hostname: "BaseVm"
 docker_pkg_name: 'docker-ce'
 uninstall_previous_docker_versions: true
-docker_compose_version: '1.21.1'
+docker_compose_version: '1.23.2'
 docker_machine_version: '0.9.0'

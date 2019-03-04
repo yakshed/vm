@@ -14,7 +14,6 @@
 - name: Set default shell for {{ vm_user }} user
   user:
     name: "{{ vm_user }}"
-    password: "{{ vm_user }}"
     shell: "/usr/bin/zsh"
     groups: docker
     append: true

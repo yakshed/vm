@@ -10,25 +10,28 @@
   apt_repository: repo={{ item }}
   with_items: "{{ apt_ppas }}"
 - name: Install missing packages
-  apt: name={{ item }} install_recommends=yes update_cache=yes
-  with_items: "{{ apt_packages }}"
+  apt: name={{ apt_packages }} install_recommends=yes update_cache=yes
 - name: Set default shell for {{ vm_user }} user
   user: name={{ vm_user }} shell=/usr/bin/zsh groups=docker append=yes
 - gem: name=tmuxinator state=present user_install=no
 - gem: name=homesick state=present user_install=no
 - stat: path=/dev/vdb
   register: code_disk
+- stat: path=/home/{{vm_user}}/.gnupg/S.gpg-agent
+  register: agent_socket
 - name: Fix up SSH for proper Socket Forwarding
   lineinfile:
     dest: /etc/ssh/sshd_config
     line: 'StreamLocalBindUnlink yes'
 - name: Symlink Extra Agent Socket
+  when: agent_socket.stat.exists == True
   file:
     src: "/home/{{vm_user}}/.gnupg/S.gpg-agent"
     dest: "/home/{{vm_user}}/.gnupg/S.gpg-agent.extra"
     state: link
     force: yes
 - name: Symlink SSH Agent Socket
+  when: agent_socket.stat.exists == True
   file:
     src: "/home/{{vm_user}}/.gnupg/S.gpg-agent"
     dest: "/home/{{vm_user}}/.gnupg/S.gpg-agent.ssh"
@@ -57,10 +60,6 @@
     group="{{ vm_user }}"
 - name: "Clone Dotfiles"
   git: repo=https://github.com/bascht/dotfiles-public.git dest=/home/bascht/.homesick/repos/public update=no
-  become_user: "{{ vm_user }}"
-- name: "Symlink dotfiles"
-  command: homesick link public --force
-  become: yes
   become_user: "{{ vm_user }}"
 - hostname:
     name: "{{ vm_hostname }}"

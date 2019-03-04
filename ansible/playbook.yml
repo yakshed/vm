@@ -6,6 +6,7 @@
       docker_group_members:
         - bascht
       docker_opts: "-H tcp://0.0.0.0:2375"
+      apt_key_url: "hkp://ha.pool.sks-keyservers.net:80"
 - hosts: all
   become: yes
   tasks:

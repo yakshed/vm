@@ -49,13 +49,8 @@
   mount: name=/var/lib/docker src='/dev/disk/by-id/virtio-docker' fstype=ext4 state=mounted
   when: docker_disk.stat.isblk is defined and docker_disk.stat.isblk
 - lineinfile: dest=/etc/exports line="/home/bascht/Code 192.168.0.0/16(rw,sync)"
-- name: Add ssh base folder
-  file:
-    path: "/home/{{vm_user}}/.ssh"
-    state: directory
-- name: Fill in SSH Keys
-  get_url:
-    url: "https://github.com/bascht.keys"
-    dest: "/home/{{ vm_user }}/.ssh/authorized_keys"
-    mode: 0440
-    owner: "{{vm_user}}"
+- name: Add baschts key
+  authorized_key:
+    user: "{{ vm_user }}"
+    state: present
+    key: "https://github.com/{{ vm_user }}.keys"

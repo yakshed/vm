@@ -15,8 +15,10 @@
   user: name={{ vm_user }} shell=/usr/bin/zsh groups=docker append=yes
 - gem: name=tmuxinator state=present user_install=no
 - gem: name=homesick state=present user_install=no
-- stat: path=/dev/vdb
+- stat: path=/dev/vda
   register: code_disk
+- stat: path=/dev/vdb
+  register: docker_disk
 - stat: path=/home/{{vm_user}}/.gnupg/S.gpg-agent
   register: agent_socket
 - name: Fix up SSH for proper Socket Forwarding
@@ -38,8 +40,11 @@
     state: link
     force: yes
 - name: Mount Code Volume
-  mount: name=/home/bascht/Code src='/dev/vdb' fstype=ext4 state=mounted
+  mount: name=/home/bascht/Code src='/dev/vda' fstype=ext4 state=mounted
   when: code_disk.stat.isblk is defined and code_disk.stat.isblk
+- name: Mount Docker Volume
+  mount: name=/var/lib/docker src='/dev/vdb' fstype=ext4 state=mounted
+  when: docker_disk.stat.isblk is defined and docker_disk.stat.isblk
 - lineinfile: dest=/etc/exports line="/home/bascht/Code 192.168.0.0/16(rw,sync)"
 - file:
     path: "/home/{{vm_user}}/.local/share/fonts/"

@@ -16,12 +16,12 @@ Vagrant.configure(2) do |config|
     libvirt.nested = true
     libvirt.storage :file,
                     :path => "#{VM_NAME}Home",
-                    :device => "vdh",
+                    :device => "vda",
                     :size => "15G",
                     :allow_existing => true
     libvirt.storage :file,
                     :path => "#{VM_NAME}Docker",
-                    :device => "vdi",
+                    :device => "vdb",
                     :size => "25G",
                     :allow_existing => true
   end

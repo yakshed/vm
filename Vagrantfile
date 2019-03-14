@@ -2,6 +2,7 @@
 VM_NAME=File.basename(File.dirname(__FILE__))
 AVAILABLE_MEMORY=`free -m`.lines[1].split(" ")[1].to_i / 1024
 BOOTSTRAPPED=File.exist?("#{ENV['VAGRANT_DOTFILE_PATH']}/machines/default/libvirt/action_provision")
+rsync__args= ["--verbose", "--archive", "--delete", "-z"]
 
 Vagrant.configure(2) do |config|
   config.vm.box_version = ">= 1.9.4"
@@ -44,6 +45,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder '~/Documents', '/home/bascht/Documents', type: 'sshfs'
   config.vm.synced_folder './', '/vagrant', type: 'sshfs'
-  config.vm.synced_folder '~/.homesick/repos/', '/home/bascht/.homesick/repos/', type: 'sshfs'
-  config.vm.synced_folder '~/.local/share/fonts', '/home/bascht/.local/share/fonts', type: 'sshfs'
+  config.vm.synced_folder '~/.homesick/repos/', '/home/bascht/.homesick/repos/', type: 'rsync', rsync__args: rsync__args
+
+  config.vm.synced_folder '~/.local/share/fonts', '/home/bascht/.local/share/fonts', type: 'rsync', rsync__args: rsync__args
 end

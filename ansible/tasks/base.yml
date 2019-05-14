@@ -57,3 +57,5 @@
     user: "{{ vm_user }}"
     state: present
     key: "https://github.com/{{ vm_user }}.keys"
+- hostname:
+    name: "{{ vm_hostname }}"

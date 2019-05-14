@@ -7,7 +7,7 @@ rsync__args= ["--verbose", "--archive", "--delete", "-z"]
 Vagrant.configure(2) do |config|
   config.vm.box_version = ">= 1.9.4"
   config.vm.box = "generic/ubuntu1804"
-  config.vm.hostname = "DevVm"
+  config.vm.hostname = VM_NAME
 
   config.vm.provider :libvirt do |libvirt|
     libvirt.memory = AVAILABLE_MEMORY > 16 ? 4069 : 2048

@@ -10,6 +10,7 @@ Vagrant.configure(2) do |config|
   config.vm.hostname = VM_NAME
 
   config.vm.provider :libvirt do |libvirt|
+    libvirt.qemu_use_session = false
     libvirt.memory = AVAILABLE_MEMORY > 16 ? 4069 : 2048
     libvirt.cpus = 4
     libvirt.random_hostname = true

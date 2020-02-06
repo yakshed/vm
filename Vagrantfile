@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provider :libvirt do |libvirt|
     libvirt.qemu_use_session = false
-    libvirt.memory = AVAILABLE_MEMORY > 16 ? 4069 : 2048
+    libvirt.memory = AVAILABLE_MEMORY > 16 ? 16384 : 2048
     libvirt.cpus = 4
     libvirt.random_hostname = true
     libvirt.cpu_mode = "host-model"
@@ -25,7 +25,7 @@ Vagrant.configure(2) do |config|
     libvirt.storage :file,
                     :path => "#{VM_NAME}Docker",
                     :serial => "docker",
-                    :size => "25G",
+                    :size => "40G",
                     :allow_existing => true
   end
 
@@ -43,10 +43,6 @@ Vagrant.configure(2) do |config|
   else
     config.vm.provision "shell", path: "vagrant-bootstrap.sh"
   end
-
-  config.vm.synced_folder '~/Documents', '/home/bascht/Documents', type: 'sshfs'
-  config.vm.synced_folder './', '/vagrant', type: 'sshfs'
-  config.vm.synced_folder '~/.homesick/repos/', '/home/bascht/.homesick/repos/', type: 'rsync', rsync__args: rsync__args
-
-  config.vm.synced_folder '~/.local/share/fonts', '/home/bascht/.local/share/fonts', type: 'rsync', rsync__args: rsync__args
+  config.vm.synced_folder './', '/vagrant',                        type: '9p', disabled: false, accessmode: "squash", owner: "1000"
+  config.vm.synced_folder '~/Documents', '/home/bascht/Documents', type: '9p', disabled: false, accessmode: "squash", owner: "1000"
 end

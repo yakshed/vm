@@ -14,24 +14,9 @@
   npm:
     name: tern
     global: yes
-- stat: path=/home/bascht/bin/install-binreleases
-  register: binutils
-
-- name: "Symlink dotfiles"
-  command: homesick symlink public --force
+- name: "Install Chezmoi"
+  command: curl -sfL https://git.io/chezmoi | sh
   become: yes
   become_user: "{{ vm_user }}"
   args:
-    creates: "/home/bascht/bin/install-binreleases"
-- name: "Symlink private dotfiles"
-  command: homesick symlink private --force
-  become: yes
-  become_user: "{{ vm_user }}"
-  args:
-    creates: "/home/bascht/.tmuxinator"
-- name: "Install binutils"
-  command: /home/bascht/bin/install-binreleases
-  become: yes
-  become_user: "{{ vm_user }}"
-  args:
-    creates: "/home/bascht/bin/packer"
+    creates: "/home/bascht/bin/chezmoi"

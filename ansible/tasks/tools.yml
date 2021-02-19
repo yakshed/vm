@@ -1,5 +1,12 @@
+- apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+- apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    state: present
+- apt: update_cache=yes name=docker-ce state=latest
+
 - gem: name=tmuxinator state=present user_install=no
-- gem: name=homesick state=present user_install=no
 - gem: name=pry state=present user_install=no
 - gem: name=bundler state=present user_install=no
 - stat: path=/home/bascht/.tmux.conf
@@ -10,13 +17,3 @@
     dest: /var/run/vm_ip
     mode: "0744"
     content: "{{ ansible_eth0.ipv4.address|default(omit) }}"
-- name: Install Tern globally
-  npm:
-    name: tern
-    global: yes
-- name: "Install Chezmoi"
-  command: curl -sfL https://git.io/chezmoi | sh
-  become: yes
-  become_user: "{{ vm_user }}"
-  args:
-    creates: "/home/bascht/bin/chezmoi"

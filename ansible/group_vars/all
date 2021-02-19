@@ -22,8 +22,9 @@ apt_packages:
   - graphviz
   - htop
   - human-theme
+  - hunspell-de-de
+  - hunspell-en-gb
   - imagemagick
-  - ipython
   - libev-dev
   - libcurl4-openssl-dev
   - libgmp-dev
@@ -41,9 +42,10 @@ apt_packages:
   - pandoc
   - pass
   - postgresql-client
+  - pwgen
   - redir
-  - ruby2.5
-  - ruby2.5-dev
+  - ruby2.6
+  - ruby2.6-dev
   - ruby-switch
   - silversearcher-ag
   - tig
@@ -59,5 +61,5 @@ vm_user: 'bascht'
 vm_hostname: "BaseVm"
 docker_pkg_name: 'docker-ce'
 uninstall_previous_docker_versions: true
-docker_compose_version: '1.23.2'
+docker_compose_version: '1.28.4'
 docker_machine_version: '0.9.0'

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-apt update -qq
+apt-get update -qq

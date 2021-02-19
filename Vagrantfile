@@ -5,7 +5,7 @@ BOOTSTRAPPED=File.exist?("#{ENV['VAGRANT_DOTFILE_PATH']}/machines/default/libvir
 rsync__args= ["--verbose", "--archive", "--delete", "-z"]
 
 Vagrant.configure(2) do |config|
-  config.vm.box_version = ">= 1.9.4"
+  config.vm.box_version = "3.2.4"
   config.vm.box = "generic/ubuntu2004"
   config.vm.hostname = VM_NAME
 
@@ -44,5 +44,4 @@ Vagrant.configure(2) do |config|
     config.vm.provision "shell", path: "vagrant-bootstrap.sh"
   end
   config.vm.synced_folder './', '/vagrant',                        type: '9p', disabled: false, accessmode: "squash", owner: "1000"
-  config.vm.synced_folder '~/Documents', '/home/bascht/Documents', type: '9p', disabled: false, accessmode: "squash", owner: "1000"
 end

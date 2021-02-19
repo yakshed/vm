@@ -3,5 +3,6 @@
 - hosts: all
   become: yes
   tasks:
+  - include: tasks/docker.yml
   - include: tasks/base.yml
   - include: tasks/tools.yml

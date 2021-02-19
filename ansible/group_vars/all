@@ -1,5 +1,4 @@
 apt_packages:
-  - adwaita-icon-theme
   - aspell-de
   - aspell-en
   - aspell-fr
@@ -10,21 +9,22 @@ apt_packages:
   - cloc
   - cmake
   - direnv
+  - docker-compose
+  - editorconfig
   - emacs27
   - entr
-  - firefox
   - fish
   - figlet
-  - fonts-hack-otf
   - git
   - git-svn
   - git-review
   - graphviz
+  - hledger
   - htop
-  - human-theme
   - hunspell-de-de
   - hunspell-en-gb
   - imagemagick
+  - ingerman
   - libev-dev
   - libcurl4-openssl-dev
   - libgmp-dev
@@ -34,6 +34,7 @@ apt_packages:
   - jq
   - libpq-dev
   - libxml2-utils
+  - ledger
   - mc
   - ncdu
   - nodejs
@@ -44,14 +45,13 @@ apt_packages:
   - postgresql-client
   - pwgen
   - redir
-  - ruby2.6
-  - ruby2.6-dev
+  - ruby2.7
+  - ruby2.7-dev
   - ruby-switch
   - silversearcher-ag
   - tig
   - tmux
   - tree
-  - ttf-ubuntu-font-family
   - zsh
 apt_ppas:
   - ppa:maxmind/ppa

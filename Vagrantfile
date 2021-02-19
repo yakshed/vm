@@ -29,7 +29,7 @@ Vagrant.configure(2) do |config|
                     :size => "40G",
                     :allow_existing => true
   end
-  config.vm.network :public_network, :dev => "eno1", bridge: "eth1", :mode => "macvtap", :type => "bridge"
+  config.vm.network :public_network, :dev => "eno1", bridge: "eth1", :mode => "passthrough", :type => "bridge"
 
   if BOOTSTRAPPED
     config.ssh.username = "bascht"

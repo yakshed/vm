@@ -10,3 +10,13 @@
     dest: /var/run/vm_ip
     mode: "0744"
     content: "{{ ansible_eth0.ipv4.address|default(omit) }}"
+- name: "Configure networkd"
+  copy:
+    dest: /etc/systemd/network/eth1.network
+    content: |
+      [Match]
+      Name=eth1
+
+      [Network]
+      DHCP=ipv4
+      #DNS=10.10.0.201

@@ -10,7 +10,7 @@ apt_packages:
   - cloc
   - cmake
   - direnv
-  - emacs26
+  - emacs27
   - entr
   - firefox
   - fish

@@ -9,6 +9,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "generic/ubuntu2004"
   config.vm.hostname = VM_NAME
 
+
   config.vm.provider :libvirt do |libvirt|
     libvirt.qemu_use_session = false
     libvirt.memory = AVAILABLE_MEMORY > 16 ? 16384 : 2048
@@ -28,6 +29,7 @@ Vagrant.configure(2) do |config|
                     :size => "40G",
                     :allow_existing => true
   end
+  config.vm.network :public_network, :dev => "eno1", bridge: "eth1", :mode => "macvtaap", :type => "bridge"
 
   if BOOTSTRAPPED
     config.ssh.username = "bascht"
